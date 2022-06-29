@@ -1,0 +1,30 @@
+{% extends "blog/general.html" %}
+{% block content %}
+        <p id="tour"></p>
+        
+        <div class="jo1">X player: hu</div>
+        <div class="jo2">O player: hi</div>
+
+        <div class="cadre_xo">
+            <div id="gene-cadre">
+                <div data-index="1" class="min-cadre"></div>
+                <div data-index="2" class="min-cadre"></div>
+                <div data-index="3" class="min-cadre"></div>
+                <div data-index="4" class="min-cadre"></div>
+                <div data-index="5" class="min-cadre"></div>
+                <div data-index="6" class="min-cadre"></div>
+                <div data-index="7" class="min-cadre"></div>
+                <div data-index="8" class="min-cadre"></div>
+                <div data-index="9" class="min-cadre"></div>
+            </div>
+        </div><br><br>
+
+        
+        <div id="partie_de_botton">
+            <button id="new_geme" onclick="newgame()">New game</button>
+            <button id="log_out" onclick="location='/'">log out</button>
+        </div>
+
+        
+
+{% endblock content %}

@@ -1,0 +1,117 @@
+body{
+    background: #8E2DE2;  
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+}
+.form2{
+    width: 20%;
+    height: 450px;
+    border: solid #fff;
+    background-color: #fff;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    top: 15%;
+    left: 37%;
+}
+.form3{
+    width: 20%;
+    height: 450px;
+    border: solid red;
+    background-color: red;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    top: 8%;
+    left: 43%;
+}
+
+.btn3{
+    color: #fff;
+    background-color: #4A00E0;
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid #4A00E0;
+    text-align: center;
+    position: fixed;
+    top: 68%;
+    left: 41%;
+}
+.nom{
+    font-size: 14px;
+    width: 15%;
+    height: 18px;
+    border-radius: 20px;
+    position: fixed;
+    top: 47%;
+    left: 39%;
+    border: 1px solid ;
+}
+.email{
+    font-size: 14px;
+    width: 15%;
+    height: 18px;
+    border-radius: 20px;
+    position: fixed;
+    top: 52%;
+    left: 39%;
+    border: 1px solid ;
+}
+.psd{
+    font-size: 14px;
+    width: 15%;
+    height: 18px;
+    border-radius: 20px;
+    position: fixed;
+    top: 57%;
+    left: 39%;
+    border: 1px solid ;
+}
+.nn{
+    font-size: 40px;
+    position: fixed;
+    top: 35%;
+    left: 39%;
+    z-index: 2;
+    font-family: Brush Script MT;
+}
+.p{
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    border-radius: 20px;
+    top: 20%;
+    left: 45%;
+    z-index: 2;
+}
+
+.rong{
+    margin-left: 0.8vw;
+    font-size: 14px;
+    border: 0.1px solid rgb(234, 78, 78);
+    width: 20.2vw;
+    margin-top: -0.8vw;
+    border-top: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(222, 106, 106);
+    color: black;
+    text-align: center;
+    visibility:visible;
+    animation:move 5s;
+    -webkit-animation:move 5s infinite;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-fill-mode:forwards;
+}
+@-webkit-keyframes move {
+    0%   {opacity:1;}
+    15%   {opacity:0.7;}  
+    50%  {opacity:0.5;}
+    75%  {opacity:0.3;}
+    100% {opacity:0;}
+}

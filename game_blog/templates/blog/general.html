@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <link rel="stylesheet" href="{% static 'blog/login.css'%}">
+        <link rel="stylesheet" href="{% static 'blog/xo.css'%}">
+    </head>
+
+    <body>
+
+        {% block content %}
+        {% endblock content %}
+
+        <!-- <script src="{% static 'blog/game.js'%}"></script> -->
+        <script src="{% static 'blog/xo.js'%}"></script>
+    </body>
+</html>
