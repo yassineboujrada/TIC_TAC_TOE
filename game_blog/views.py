@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .forms import UserLoginForm,UserRegistreform,gamer_login
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def home(request):
 
@@ -28,9 +29,11 @@ def home(request):
         
     })
 
-    # return render(request,'blog/login.html',{'form':form})
+def besselama(request):
+    logout(request)
+    return redirect('game_blog-home')
 
-
+@login_required
 def game(request):
     return render(request,'blog/xo.html')
 

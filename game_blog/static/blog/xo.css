@@ -1,5 +1,5 @@
 body{
-    /* background: black; */
+    background: rgb(96, 94, 94);
     justify-content: center;
 }
 
@@ -54,6 +54,7 @@ body{
     font-size: 15px;
     border-radius: 7px;
     color: #fff;
+    border: none;
 }
 
 #log_out{
