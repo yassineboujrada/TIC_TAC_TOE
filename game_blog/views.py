@@ -1,35 +1,34 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from .forms import UserLoginForm,UserRegistreform,gamer_login
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 def home(request):
 
-    # if request.method=="POST":
-    #     # form = UserLoginForm(request.POST)
-    #     form=UserRegistreform(request.POST)
-    #     # print("ok now here2")
-    #     if form.is_valid(): 
-
-    #         # print(form.cleaned_data['username'])
-
-    #         return HttpResponseRedirect('/game/')
-       
+    # if request.user.is_authenticated():
+    #     return HttpResponseRedirect("/game/")
     # else:
-    #     print("ooooooo")
-    #     # form = UserLoginForm()
-    #     form=UserRegistreform()
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        
+        if user is not None:
+            login(request,user)
+            # c = Authentification_for_PowerBI().CLIENT_POWER_BI.
+            # print('-------------------')
+            # print(c)
+            return redirect('game_blog-game')
+        else: 
+            messages.info(request,"Username or Password Incorrect !")
 
-    # print("+++++++++++++++++++++++++++++++")
+    return render(request,'blog/login.html', {
+        
+    })
 
-    form = UserRegistreform()
-    if request.method=="POST":
-        print(request.POST)
-        form = UserRegistreform(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/game/')
-
-    return render(request,'blog/login.html',{'form':form})
+    # return render(request,'blog/login.html',{'form':form})
 
 
 def game(request):

@@ -1,5 +1,5 @@
 body{
-    background: black;
+    /* background: black; */
     justify-content: center;
 }
 
@@ -34,7 +34,6 @@ body{
 
 #tour{
     color: plum;
-    border: solid black;
     display: flex;
     align-items: center;
     justify-content: center;

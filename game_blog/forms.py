@@ -36,9 +36,7 @@ class UserRegistreform(forms.ModelForm):
 
 
 class gamer_login(forms.ModelForm):
-
-
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['username','email']
 

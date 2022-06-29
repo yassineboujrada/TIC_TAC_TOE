@@ -1,20 +1,27 @@
 {% extends "blog/general.html" %}
 {% block content %}
 
-<!-- <img class="p" src="/static/blog/gamer2.jpg">
-<div class="nn">Creat you're fun</div>
-<div class="form3"></div> -->
-
-<form class="form2" method="POST">
+<form method="POST">
     {% csrf_token %}
-    <!-- <input class="nom" name="user" type"text" placeholder="your name" required><br>
-    <input class="email" name="email" type="email" placeholder="your adress email" required><br>
-    <input class="psd" name="password" type="password" placeholder="Password" required>
-    <button class="btn3" type="submit">Login</button> -->
-    {{ form }}
 
-    <!-- <button class="btn3" type="submit">Login</button>  -->
-    <button class="btn3" type="submit">Login2</button>
-</form>
+     <!-- Email input -->
+     <div class="form-outline mb-4">
+         <label class="form-label" for="username">Username</label>
+       <input type="text" id="username" name="username" class="form-control" />
+     </div>
+
+     <!-- Password input -->
+     <div class="form-outline mb-4">
+        <label class="form-label" for="password">Password</label>
+       <input type="password" id="password" name="password" class="form-control" />
+     </div>
+
+     <!-- Submit button -->
+     <button type="submit" class="btn btn-primary btn-block mb-4">
+       Log in
+     </button>
+
+
+   </form>
 
 {% endblock content %}
