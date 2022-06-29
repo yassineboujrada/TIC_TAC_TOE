@@ -16,6 +16,12 @@ body{
     justify-content: center;
 }
 
+#info{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .min-cadre{
     border: 3px solid white;
     height : 150px;
@@ -33,6 +39,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 28px; 
+    width: 400px;
 }
 
 #partie_de_botton{
@@ -55,20 +62,18 @@ body{
 }
 
 
-.jo1{
+.jo{
     color: red;
-    position: fixed;
-    width: 180px;
-    height: 80px;
-    border: 4px solid gray;
-    top: 30%;
-    left: 10%;
+    /* position: fixed; */
+    width: 380px;
+    height: 40px;
+    /* border: 4px solid gray; */
     text-align: center;
     font-size: 30px;
     font-family:Rockwell ;
     border-radius: 20px;
 }
-.jo2{
+/* .jo2{
     text-align: center;
     color: rgba(0, 0, 255, 0.877);
     position: fixed;
@@ -80,4 +85,4 @@ body{
     font-size: 30px;
     font-family: Rockwell;
     border-radius: 20px;
-}
+} */

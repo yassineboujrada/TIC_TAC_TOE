@@ -26,7 +26,6 @@ function do_it(){
         return
     }
     Game[indexCase] = player
-    console.log("m",player)
     this.innerHTML = player
     if (Game[indexCase]==="O"){
         this.style.color="blue"
