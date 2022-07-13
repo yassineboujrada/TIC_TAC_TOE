@@ -21,7 +21,8 @@ def home(request):
             # c = Authentification_for_PowerBI().CLIENT_POWER_BI.
             # print('-------------------')
             # print(c)
-            return redirect('game_blog-game')
+            return redirect('game_blog-user')
+            # return redirect('game_blog-game')
         else: 
             messages.info(request,"Username or Password Incorrect !")
 
@@ -35,7 +36,18 @@ def besselama(request):
 
 @login_required
 def game(request):
-    return render(request,'blog/xo.html')
+    return render(request,'blog/xo.html',{
+        'play1':request.session['user1'],
+        'play2':request.session['user2'],
+    })
+
+@login_required
+def users(request):
+    if request.method=="POST":
+        request.session['user1']=request.POST.get("play1","")
+        request.session['user2']=request.POST.get("play2","")
+        return redirect('game_blog-game')
+    return render(request,'blog/acceuil.html')
 
 # def register(request):
 #     if request.method =="POST":

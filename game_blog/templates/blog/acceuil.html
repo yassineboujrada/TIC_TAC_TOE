@@ -1,16 +1,11 @@
 {% extends "blog/general.html" %}
 {% block content %}
 
-    <link rel="stylesheet" href="{% static 'blog/accueil.css'%}">
-    <img class="ph2" src="/static/gamer2.jpg">
-    <div class="nnn">Welcome</div>
-    <form action="" id="form" method="POST">
-        <input type="text" class="user" name="email" placeholder="adresse email" required><br>
-        <input type="password" class="pass" name="pwd" placeholder="password" required><br>
-        <button type="submit" class="btn">connect</button>
-        <button type="submit" class="btn2" >Log In</button>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="play1" id="" placeholder="player 1" required>
+        <input type="text" name="play2" id="" placeholder="player 2" required>
+        <button type="submit">Let's play</button>
     </form>
-    <img class="ph1" src="/static/back1.jpg">
-    <a href="/forgot" class="forgot">Forgot you're password?</a>
     
 {% endblock content %}
