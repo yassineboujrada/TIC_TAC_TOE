@@ -1,32 +1,21 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
-from .forms import UserLoginForm,UserRegistreform,gamer_login
 from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def home(request):
-
-    # if request.user.is_authenticated():
-    #     return HttpResponseRedirect("/game/")
-    # else:
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        print(user)
-        
-        if user is not None:
+        password = request.POST.get('pass')
+        try:
+            user=User.objects.get(username=username,password=password)
             login(request,user)
-            # c = Authentification_for_PowerBI().CLIENT_POWER_BI.
-            # print('-------------------')
-            # print(c)
             return redirect('game_blog-user')
-            # return redirect('game_blog-game')
-        else: 
+        except:
             messages.info(request,"Username or Password Incorrect !")
 
-    return render(request,'blog/login.html', {
+    return render(request,'blog/index.html', {
         
     })
 
@@ -49,23 +38,21 @@ def users(request):
         return redirect('game_blog-game')
     return render(request,'blog/acceuil.html')
 
-# def register(request):
-#     if request.method =="POST":
-#         print("ok now here")
-#         # form = UserCreationForm(request.POST)
-#         form = UserRegistreform(request.POST)
-#         print("ok now here2")
-#         if form.is_valid():
-#             form.save()
-#             user=form.cleaned_data.get('username')
-#             messages.success(request,f'Youre account has been  created {user}, Now you can login')
-#             print("ok")
-#             return redirect('login')
-#     else:
-#         print("not ok")
-#         form = UserCreationForm()
-#     print("+++++++++++++++++++++++++++++++")
-#     return render(request,'users/register.html',{'form':form})
-
-# Create your views here.
-
+def register(request):
+    if request.method=="POST":
+        new_user=request.POST.get("usernme","")
+        pass1=request.POST.get("pass1","")
+        pass2=request.POST.get("pass2","")
+        c=User.objects.filter(username=new_user)
+        if not c:
+            if pass1==pass2 and len(pass1)>=8:
+                l=User(username=new_user,password=pass1)
+                l.save()
+                return redirect("game_blog-home")
+            else:
+                messages.success(request,"You're password and confirm password defferent or length not > 8")
+                return redirect("registre")
+        else:
+            messages.success(request,"You're account already exist")
+            return redirect("registre")
+    return render(request,"blog/register.html")

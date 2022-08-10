@@ -1,5 +1,5 @@
 body{
-    background: rgb(96, 94, 94);
+    background: rgb(29, 2, 2);
     justify-content: center;
 }
 
@@ -23,7 +23,7 @@ body{
 }
 
 .min-cadre{
-    border: 3px solid white;
+    border: 3px solid #000;
     height : 150px;
     line-height: 160px;
     text-align: center;

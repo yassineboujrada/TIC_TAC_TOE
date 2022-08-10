@@ -14,7 +14,7 @@ const cas_game_over = [
     [0, 4, 8],
     [2, 4, 6]
 ]
-const gagne = () => `Congartulation ${player} you're WINER `
+const gagne = () => `Congartulation ${player} WINE`
 const egalite = () => "Egalité"
 const noba = () => `le tour de ${player} player`
 paragraphe.innerHTML = noba()
@@ -53,7 +53,7 @@ function verifGagne(){
     }
     if(!Game.includes("")){
         paragraphe.innerHTML = "Egale"
-        paragraphe.style.color="yellow"
+        paragraphe.style.color="pink"
         jeu = false
         return
     }

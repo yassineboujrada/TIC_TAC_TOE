@@ -1,11 +1,41 @@
 {% extends "blog/general.html" %}
 {% block content %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="text" name="play1" id="" placeholder="player 1" required>
-        <input type="text" name="play2" id="" placeholder="player 2" required>
-        <button type="submit">Let's play</button>
+            <form class="login100-form validate-form" method="POST">
+                {% csrf_token %}
+                <span class="login100-form-title p-b-49">
+                    Name Of Players
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                    <span class="label-input100">Player 1</span>
+                    <input class="input100" type="text" name="play1" placeholder="Type your name">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <span class="label-input100">Player 2</span>
+                    <input class="input100" type="text" name="play2" placeholder="Type your name">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+                
+                <div class="text-right p-t-8 p-b-31">
+                </div>
+                
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn">
+                            Let's Play
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </form>
-    
+</div>
+</div></div>
 {% endblock content %}

@@ -1,5 +1,7 @@
 {% extends "blog/general.html" %}
 {% block content %}
+{% load static %}
+<br><br>
         <div id="info">
             <div class="jo">X player: {{play1}}</div>
             <p id="tour"></p>
@@ -26,6 +28,6 @@
             <button id="log_out" onclick="location='/logout/'">log out</button>
         </div>
 
-        
+        <script src="{% static 'blog/xo.js'%}"></script>   
 
 {% endblock content %}

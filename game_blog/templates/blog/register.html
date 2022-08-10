@@ -1,0 +1,66 @@
+{% extends "blog/general.html" %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert my-2" style="  padding: 10px;
+background-color: #f44336;
+color: white;">
+<span class="closebtn" onclick="this.parentElement.style.display='none';" style=" margin-left: 15px;
+color: white;
+font-weight: bold;
+float: right;
+cursor: pointer;
+transition: 0.3s;">&times;</span> 
+
+<p id='message'> {{message}} </p>
+
+</div> 
+
+{% endfor %}
+{% endif %}
+<div class="limiter">
+    <div class="container-login100">
+        
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+
+            <form class="login100-form validate-form" method="POST">
+                {% csrf_token %}
+                <span class="login100-form-title p-b-49">
+                    Register
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                    <span class="label-input100">Username</span>
+                    <input class="input100" type="text" name="usernme" placeholder="Type your name">
+                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <span class="label-input100">New Password</span>
+                    <input class="input100" type="password" name="pass1" placeholder="New Password">
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+                <br>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <span class="label-input100">Confirm Password</span>
+                    <input class="input100" type="password" name="pass2" placeholder="Confirm New Password">
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+                
+                <div class="text-right p-t-8 p-b-31">
+                </div>
+                
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>
+</div>
+</div></div>
+{% endblock content %}
